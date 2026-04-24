@@ -1,94 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cruise Itinerary</title>
-    <style>
-        :root {
-            --navy: #001f3f;
-            --gold: #FFCC00;
-            --cream: #FFFFCC;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--cream);
-            color: var(--navy);
-            margin: 0;
-        }
-        header {
-            background-color: var(--navy);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        .hero {
-            background-image: url('hero-image.jpg');
-            background-size: cover;
-            height: 400px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-        .packing-essentials {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-        }
-        .essentials-item {
-            background: var(--gold);
-            border: 1px solid var(--navy);
-            padding: 10px;
-            text-align: center;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026 Mediterranean Cruise Itinerary</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --gold: #c9a84c;
+    --gold-light: #e8d5a3;
+    --cream: #faf6ef;
+    --warm-white: #fff9f2;
+    --text: #2c2c2c;
+    --text-light: #6b6b6b;
+    --sea: #3a6b8a;
+    --sea-light: #d4e8f4;
+    --blush: #f0e6da;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    font-weight: 300;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--navy);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(201,168,76,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(58,107,138,0.3) 0%, transparent 50%);
+  }
+  .hero-label {
+    font-family: 'Jost', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.1;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+    position: relative;
+    margin-bottom: 24px;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+    position: relative;
+  }
+  .hero-meta {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .hero-meta-item {
+    text-align: center;
+  }
+  .hero-meta-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 4px;
+  }
+  .hero-meta-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+  }
+
+  /* PACKING ESSENTIALS */
+  .packing-section {
+    background: var(--navy);
+    color: white;
+    padding: 40px;
+    border-top: 1px solid rgba(201,168,76,0.3);
+  }
+  .packing-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+    text-align: center;
+  }
+  .packing-section .section-sub {
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 30px;
+  }
+  .packing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .packing-category {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 8px;
+    padding: 20px;
+  }
+  .packing-category h3 {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+  .packing-category ul {
+    list-style: none;
+  }
+  .packing-category ul li {
+    font-size: 13px;
+    color: rgba(255,255,255,0.8);
+    padding: 3px 0;
+    padding-left: 12px;
+    position: relative;
+    line-height: 1.4;
+  }
+  .packing-category ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 10px;
+    top: 4px;
+  }
+
+  /* DAYS */
+  .days-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+
+  .days-header {
+    text-align: center;
+    padding: 50px 0 30px;
+  }
+  .days-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--navy);
+  }
+  .days-header p {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(26,39,68,0.08);
+    border: 1px solid rgba(26,39,68,0.06);
+  }
+
+  .day-header {
+    display: flex;
+    align-items: stretch;
+  }
+  .day-number {
+    background: var(--navy);
+    color: white;
+    padding: 20px 22px;
+    text-align: center;
+    min-width: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .day-number .day-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .day-number .day-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1;
+  }
+  .day-number .day-name {
+    font-size: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-top: 4px;
+  }
+
+  .day-title-area {
+    flex: 1;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--sea) 100%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .day-title-area .date-text {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 4px;
+  }
+  .day-title-area h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.2;
+  }
+  .day-title-area .day-type {
+    font-size: 11px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 4px;
+    letter-spacing: 1px;
+  }
+  .day-weather-strip {
+    background: var(--sea-light);
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(58,107,138,0.15);
+  }
+  .weather-item {
+    font-size: 12px;
+    color: var(--sea);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .weather-icon { font-size: 14px; }
+
+  .day-body {
+    padding: 20px 24px;
+  }
+
+  .info-block {
+    margin-bottom: 16px;
+  }
+  .info-block:last-child { margin-bottom: 0; }
+
+  .info-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .info-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--gold-light);
+  }
+
+  .info-content {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  .outfit-box {
+    background: var(--blush);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin-top: 8px;
+  }
+  .outfit-box p {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--text);
+  }
+  .outfit-box .outfit-occasion {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+
+  .dinner-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-top: 8px;
+  }
+  .dinner-box .dinner-venue {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--gold-light);
+    margin-bottom: 4px;
+  }
+  .dinner-box .dinner-details {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+  }
+
+  .port-info {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  .port-badge {
+    background: var(--sea-light);
+    color: var(--sea);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
+  .port-badge.embark { background: #d4f0d4; color: #2d6b2d; }
+  .port-badge.disembark { background: #f0d4d4; color: #6b2d2d; }
+  .port-badge.overnight { background: #e8d4f0; color: #4a2d6b; }
+
+  hr.day-divider {
+    border: none;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    margin: 14px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 36px; }
+    .hero { padding: 40px 20px; }
+    .packing-section { padding: 30px 20px; }
+    .days-container { padding: 0 16px 40px; }
+    .day-body { padding: 16px; }
+  }
+
+  @media print {
+    body { background: white; }
+    .day-card { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
 </head>
 <body>
-<header>
-    <h1>2026 Cruise Itinerary</h1>
-</header>
+
+<!-- HERO -->
 <div class="hero">
-    <h2>Welcome Aboard!</h2>
+  <div class="hero-label">Explora Journeys · Explora I</div>
+  <h1>Mediterranean Cruise</h1>
+  <h2>Barcelona to Civitavecchia (Rome)</h2>
+  <div class="hero-divider"></div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Embark</span>
+      <span class="hero-meta-value">3 May 2026 · Barcelona</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Disembark</span>
+      <span class="hero-meta-value">13 May 2026 · Rome</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Journey Days</span>
+      <span class="hero-meta-value">10 Nights</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="hero-meta-label">Ports of Call</span>
+      <span class="hero-meta-value">8 Destinations</span>
+    </div>
+  </div>
 </div>
-<section class="packing-essentials">
-    <div class="essentials-item">Clothing</div>
-    <div class="essentials-item">Toiletries</div>
-    <div class="essentials-item">Documents</div>
-    <div class="essentials-item">Medications</div>
-    <div class="essentials-item">Electronics</div>
-    <div class="essentials-item">Snacks</div>
-    <div class="essentials-item">Books</div>
-    <div class="essentials-item">Swim Gear</div>
-</section>
-<section>
+
+<!-- PACKING ESSENTIALS -->
+<div class="packing-section">
+  <h2>Packing Essentials</h2>
+  <div class="section-sub">What to bring for your 10-night Mediterranean journey</div>
+  <div class="packing-grid">
+
+    <div class="packing-category">
+      <h3>Shoes</h3>
+      <ul>
+        <li>White or nude leather sneakers (sightseeing)</li>
+        <li>Comfortable walking sandals (warm port days)</li>
+        <li>Dressy flat or low-heel sandal (dinner on ship)</li>
+        <li>Block-heel or wedge (formal nights)</li>
+        <li>Cycling shoes or athletic sneakers (Saint Tropez bike tour)</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Outerwear & Layers</h3>
+      <ul>
+        <li>Light linen or cotton blazer (evenings/dinners)</li>
+        <li>Lightweight packable rain jacket (Florence, Rome)</li>
+        <li>Cashmere or cotton cardigan (sea days, evenings)</li>
+        <li>Light scarf or wrap (mosques, churches, cool evenings)</li>
+        <li>Windproof layer (on-deck, Saint Tropez cycling)</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Daywear</h3>
+      <ul>
+        <li>3–4 sundresses (port days)</li>
+        <li>2 pairs linen or cotton trousers</li>
+        <li>2–3 lightweight blouses or tops</li>
+        <li>1 pair shorts or casual capris</li>
+        <li>Active leggings or cycling shorts</li>
+        <li>Swimsuit + cover-up (pool days)</li>
+        <li>2–3 casual T-shirts</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Evening & Smart Casual</h3>
+      <ul>
+        <li>2–3 elegant dinner dresses (ship dining)</li>
+        <li>1 cocktail or formal dress (special evenings)</li>
+        <li>Smart trousers + nice top (Monaco, Florence)</li>
+        <li>Silk or satin blouse</li>
+        <li>Statement jewelry or accessories</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Sun & Beach</h3>
+      <ul>
+        <li>High SPF 50+ sunscreen (UV is HIGH all trip)</li>
+        <li>Wide-brim sun hat</li>
+        <li>Sunglasses (UV-blocking)</li>
+        <li>Beach bag or tote</li>
+        <li>After-sun lotion</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Modesty & Culture</h3>
+      <ul>
+        <li>Shoulders covered for mosques & churches</li>
+        <li>Lightweight long skirt or trousers for Tangier</li>
+        <li>Head covering (optional) for mosques</li>
+        <li>Dress conservatively in Morocco (no sleeveless)</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Accessories & Misc</h3>
+      <ul>
+        <li>Compact umbrella (Florence/Rome rain risk)</li>
+        <li>Day bag or small crossbody (pickpocket safety)</li>
+        <li>European plug adapter</li>
+        <li>Reusable water bottle</li>
+        <li>Portable phone charger</li>
+        <li>Travel wallet / copies of documents</li>
+      </ul>
+    </div>
+
+    <div class="packing-category">
+      <h3>Cycling Day (5/10)</h3>
+      <ul>
+        <li>Athletic leggings or bike shorts</li>
+        <li>Moisture-wicking top</li>
+        <li>Athletic sneakers or cycling shoes</li>
+        <li>Windproof jacket</li>
+        <li>Sunscreen + sunglasses</li>
+        <li>Small backpack</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- DAY BY DAY -->
+<div class="days-container">
+  <div class="days-header">
     <h2>Day-by-Day Itinerary</h2>
-    <h3>Pre-Cruise Flights</h3>
-    <p>Flight information...</p>
-    <h3>Day 1: Departure</h3>
-    <p>Details about Day 1...</p>
-    <h3>Day 2: Destination One</h3>
-    <p>Details about Day 2...</p>
-    <h3>Day 3: Destination Two</h3>
-    <p>Details about Day 3...</p>
-    <h3>Day 4: Destination Three</h3>
-    <p>Details about Day 4...</p>
-    <h3>Day 5: Destination Four</h3>
-    <p>Details about Day 5...</p>
-    <h3>Day 6: Relaxation Day</h3>
-    <p>Details about Day 6...</p>
-    <h3>Day 7: Destination Five</h3>
-    <p>Details about Day 7...</p>
-    <h3>Day 8: Destination Six</h3>
-    <p>Details about Day 8...</p>
-    <h3>Day 9: Destination Seven</h3>
-    <p>Details about Day 9...</p>
-    <h3>Day 10: Destination Eight</h3>
-    <p>Details about Day 10...</p>
-    <h3>Day 11: Rome Disembarkation</h3>
-    <p>Return flight information...</p>
-</section>
+    <p>With weather, outfits & dining</p>
+  </div>
+
+  <!-- PRE-CRUISE: FLIGHTS -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Travel</span>
+        <span class="day-num">✈</span>
+        <span class="day-name">May 1</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Friday, May 1, 2026</div>
+        <h3>Flight: Lexington → Barcelona</h3>
+        <div class="day-type">LEX → BCN · Departure Day</div>
+      </div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="info-label">Flight Details</div>
+        <div class="info-content">Depart Lexington (LEX) at <strong>4:53 PM</strong> · Arrive Barcelona (BCN) at <strong>12:50 PM next day</strong> (overnight flight). Note your route is LEX–BCN–FCO per your booking.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Travel Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Airport & Overnight Flight</div>
+          <p>Comfortable wide-leg linen trousers in a neutral tone (taupe, ivory, or soft grey) + fitted cotton crewneck or breathable knit top. Layer with a roomy cotton cardigan for the plane — airplane cabins are cold, and you'll want the versatility on arrival. Slip-on white leather sneakers keep security stress-free. Crossbody bag for documents and essentials.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 1: BARCELONA EMBARKATION -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">1</span>
+        <span class="day-name">Sun</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Sunday, May 3, 2026</div>
+        <h3>Barcelona, Spain — Embarkation</h3>
+        <div class="day-type">Board Explora I at 4:00 PM</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">🌤️</span> Mild & Sunny</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 66°F / Low 57°F</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> 10 mph SE breeze</div>
+      <div class="weather-item"><span class="weather-icon">☀️</span> 9 hrs sunshine</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge embark">⚓ Embarkation · 4:00 PM</span>
+          <span class="port-badge">Barcelona Cruise Terminal</span>
+        </div>
+        <div class="info-content">Board Explora I at 4:00 PM at the Port of Barcelona. You may have a few hours in the morning/afternoon to explore Barcelona before boarding. The city is warm and walkable — Las Ramblas, the Gothic Quarter, and Barceloneta beach are all within easy reach of the port. The ship departs in the <strong>evening</strong>, so dinner will be on board.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day (Exploring Barcelona)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Morning/Afternoon Sightseeing</div>
+          <p>A breezy midi sundress in a floral or solid Mediterranean hue (terracotta, cobalt, or white) + white leather sneakers. Bring a light cotton cardigan in case it's breezy near the harbor. A small crossbody bag for your passport, euros, and camera. Sun hat + SPF 50+ — UV is strong even in May.</p>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Outfit — Evening (Embarkation Dinner)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">First Night on Ship — Elegant Dinner</div>
+          <p>A polished sundress or smart-casual wrap dress in a jewel tone (emerald, navy, dusty rose) + dressy flat sandal or low kitten heel. Add a silk scarf or statement necklace to feel elevated. Light blazer for the ship's AC. This is your first impression on board — dress to delight without going full formal.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Marble and Co. @ 8:30 PM · On Board</div>
+          <div class="dinner-details">First dinner on Explora I at the elegant Marble and Co. restaurant. This is a beautiful upscale dining experience — dress accordingly. Smart casual at minimum; think cocktail-adjacent attire.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 2: AT SEA -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">2</span>
+        <span class="day-name">Mon</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Monday, May 4, 2026</div>
+        <h3>At Sea</h3>
+        <div class="day-type">Full Day at Sea · Cruising toward Cádiz</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">⛅</span> Partly Cloudy</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 68°F / Low 59°F</div>
+      <div class="weather-item"><span class="weather-icon">🌊</span> Open Atlantic waters</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Breezy on deck</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="info-content">A glorious sea day — enjoy the ship's pools, spa, fitness centre, or simply relax on your terrace. The Strait of Gibraltar may be visible in the afternoon as you head southwest toward Cádiz. It can be breezy on deck, so layer up for outdoor lounging.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day (Sea Day)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Pool & Deck Lounging</div>
+          <p>Swimsuit + linen or cotton cover-up (a kaftan or button-front shirt dress works beautifully). Wide-brim hat, sunglasses, and SPF 50+. Bring a lightweight windproof layer for breezy deck moments. White sneakers or comfortable sandals for walking the ship. In the afternoon, freshen up into a casual sundress or trousers + blouse for exploring the ship's lounges and bars.</p>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Outfit — Evening (Dinner on Ship)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Ship Dining — Smart Elegant</div>
+          <p>An elegant dress (flowy, midi, or wrap style) in a jewel tone or soft neutral. Dressy flat sandals or a low block heel. Light blazer or cardigan for the ship's air conditioning. Statement earrings and a clutch to complete the look.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Mediterranean Yacht Club · On Board (TBD)</div>
+          <div class="dinner-details">Dress smart casual to elegant — this is a beautiful ship restaurant. Think polished and put-together: a lovely dress or tailored trousers with a silk blouse.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 3: CÁDIZ -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">3</span>
+        <span class="day-name">Tue</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Tuesday, May 5, 2026</div>
+        <h3>Cádiz, Spain</h3>
+        <div class="day-type">In Port: 8:00 AM – 10:00 PM · Dinner in Town</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">☀️</span> Sunny & Warm</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 72°F / Low 62°F</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Atlantic breeze</div>
+      <div class="weather-item"><span class="weather-icon">🌊</span> Sea temp 67°F</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 8:00 AM</span>
+          <span class="port-badge">Depart 10:00 PM</span>
+        </div>
+        <div class="info-content">One of the oldest cities in Europe, Cádiz is a whitewashed gem on a peninsula jutting into the Atlantic. Its golden-sand beaches, narrow Moorish lanes, fish markets, and tapas bars are magical. <strong>Note: Your "Explore Like a Local" tour (10 AM–2 PM) is on the WAIT LIST</strong> — confirm availability before going. If it doesn't come through, Cádiz is incredibly walkable on your own. The ship departs at 10 PM, so you have a full evening in town — this means a casual dinner ashore.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Excursion</div>
+        <div class="info-content"><strong>"Explore Like a Local"</strong> — 10:00 AM to 2:00 PM (WAIT LISTED). A walking exploration of Cádiz's old town, markets, and hidden spots. Comfortable, casual, and outdoors the entire time.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Sightseeing + Walking Tour · Warm & Sunny</div>
+          <p>A breezy sundress (knee or midi length) in white, pale yellow, or light blue — fitting for Cádiz's whitewashed aesthetic. White leather sneakers or comfortable walking sandals with good arch support (cobblestones!). Small crossbody bag. SPF 50+, sunglasses, and a wide-brim hat. Bring a light cotton cardigan tied around your waist for the evening Atlantic breeze.</p>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Dinner (In Town — Casual)</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner in Cádiz · Evening in Town</div>
+          <div class="dinner-details">Ship departs at 10 PM, so you have a relaxed evening to dine in town. Cádiz is famous for its fresh seafood and tapas. Head to the La Viña neighborhood near the beach or the Mercado Central area. Casual-chic attire — your daytime sundress freshened up with a statement earring and a light blazer or wrap is perfect. Comfortable sandals or sneakers since you'll be walking back to the ship afterward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 4: TANGIER -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">4</span>
+        <span class="day-name">Wed</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Wednesday, May 6, 2026</div>
+        <h3>Tangier, Morocco</h3>
+        <div class="day-type">In Port: 8:00 AM – 6:00 PM · Dinner on Ship</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">⛅</span> Warm with some cloud</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 70°F / Low 62°F</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Moderate breeze</div>
+      <div class="weather-item"><span class="weather-icon">🕌</span> Dress Modestly</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 8:00 AM</span>
+          <span class="port-badge">Depart 6:00 PM</span>
+        </div>
+        <div class="info-content">Welcome to Africa! Tangier sits at the confluence of the Atlantic and Mediterranean, with a layered history of Phoenicians, Romans, Arabs, and Europeans. The medina is a maze of color, spice, and sound. <strong>No organized tours available for this port</strong> — explore independently. The Grand Socco square, Kasbah, Medina souk, and the American Legation Museum are highlights. <strong>Important:</strong> Dress very conservatively in Tangier. Modest dress is respectful and expected in Morocco.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day (Modest Dress Required)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Morocco Exploration — Culturally Appropriate</div>
+          <p>Lightweight linen trousers (wide-leg or straight) in a neutral color (tan, white, grey) + a loose, breathable long-sleeved blouse or linen tunic that covers your shoulders and arms. Comfortable flat walking shoes or leather sandals with a strap (the medina has uneven cobblestones). A light scarf to drape over your shoulders or head near mosques. A secure zip-top crossbody bag — keep it in front of you in the souk. Skip sleeveless tops, short skirts, or revealing necklines out of respect.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner on the Ship</div>
+          <div class="dinner-details">The ship departs at 6 PM, meaning you'll return before dinner. This is a ship dinner — dress smart casual to elegant. A beautiful wrap dress or cocktail-adjacent dress. This is a good night for one of your dressier options since you'll be back early.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 5: MOTRIL -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">5</span>
+        <span class="day-name">Thu</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Thursday, May 7, 2026</div>
+        <h3>Motril (Granada), Spain</h3>
+        <div class="day-type">In Port: 9:00 AM – 8:00 PM · Dinner on Ship</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">☀️</span> Sunny & Warm</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 70°F / Low 61°F</div>
+      <div class="weather-item"><span class="weather-icon">🌴</span> Tropical microclimate</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Light breeze</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 9:00 AM</span>
+          <span class="port-badge">Depart 8:00 PM</span>
+        </div>
+        <div class="info-content">Motril is the gateway to Granada — home to one of the most stunning palaces in the world, the Alhambra. The area has a unique tropical microclimate (the only place in Europe where sugarcane and avocados grow commercially). Your tour takes you inland through the stunning landscape and local culture.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Excursion</div>
+        <div class="info-content"><strong>"A Journey Through Taste and Time"</strong> — 4 hours. A culinary and cultural exploration of the region, likely involving tastings of local specialties (tropical fruits, olive oil, cured meats). You may be standing, walking, and eating — dress comfortably.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Culinary Tour + Warm Coastal Day</div>
+          <p>A relaxed but put-together look: slim linen trousers or a casual midi skirt + a breathable blouse or lightweight top. Comfortable white sneakers or leather walking sandals. Small crossbody bag. SPF 50+, sunglasses, hat. A light cardigan in your bag for the drive or any air-conditioned venues. This is a food tour, so avoid anything too tight or restrictive — you'll want to enjoy all the tastings!</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner on the Ship</div>
+          <div class="dinner-details">Departing at 8 PM, you'll be back on board for dinner. Dress elegant for ship dining — a beautiful dress and your favorite jewelry. This is a lovely evening after a food-filled day.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 6: CARTAGENA -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">6</span>
+        <span class="day-name">Fri</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Friday, May 8, 2026</div>
+        <h3>Cartagena, Spain</h3>
+        <div class="day-type">In Port: 9:00 AM – 6:00 PM · Dinner on Ship</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">☀️</span> Sunny & Warm</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 72°F / Low 62°F</div>
+      <div class="weather-item"><span class="weather-icon">🏛️</span> Roman ruins & sunshine</div>
+      <div class="weather-item"><span class="weather-icon">💧</span> Very low rain chance</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 9:00 AM</span>
+          <span class="port-badge">Depart 6:00 PM</span>
+        </div>
+        <div class="info-content">Cartagena is a stunning city of layered history — Carthaginian, Roman, Moorish, and modernist. The Roman Theatre (Teatro Romano) is one of Spain's most important archaeological sites. Your tour covers 5.5 hours, so you'll have a thorough exploration. The city is sunny and very walkable.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Excursion</div>
+        <div class="info-content"><strong>"The Most of Cartagena"</strong> — 5½ hours. A comprehensive guided tour of the city's highlights: Roman ruins, the castle, the MURAM regional archaeology museum, and Modernista architecture. Lots of walking on uneven terrain.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">5.5-Hour Walking Tour · Hot & Sunny</div>
+          <p>Comfortable, breathable sundress (midi or knee-length, not too short for climbing into ruins) or linen trousers + a light cotton tee. Wear your best walking sneakers or strapped walking sandals — this tour involves uneven terrain and stairs. Wide-brim hat, SPF 50+, sunglasses. A small backpack is better than a handbag for such a long tour — it keeps your hands free. Bring a refillable water bottle.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Sakura @ 8:00 PM · On Board</div>
+          <div class="dinner-details">Dinner at Sakura, Explora I's Pan-Asian restaurant — a stunning culinary experience. Dress elegantly: a silk or satin dress, statement earrings, and a light blazer or cover for the AC. This is a special restaurant deserving of a beautiful outfit. Think sophisticated and refined.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 7: AT SEA -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">7</span>
+        <span class="day-name">Sat</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Saturday, May 9, 2026</div>
+        <h3>At Sea</h3>
+        <div class="day-type">Full Day at Sea · Cruising to Saint-Tropez</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">🌤️</span> Partly Sunny</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 70°F / Low 61°F</div>
+      <div class="weather-item"><span class="weather-icon">🌊</span> Mediterranean · Calmer seas</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Moderate breeze</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="info-content">A well-deserved rest day after your busy port schedule. The ship cruises through the Mediterranean toward the French Riviera. Perfect day for the spa, a fitness class, poolside reading, or one of the ship's enrichment experiences. The sea should be calmer than the Atlantic days.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day (Relaxed Sea Day)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Spa, Pool & Leisure</div>
+          <p>Swimsuit + a beautiful kaftan or linen cover-up for the pools. Comfortable walking sandals for the decks. Bring a light layer — Mediterranean breezes can be cooler than expected. In the afternoon, change into a casual sundress or relaxed trousers and a blouse for lunch and exploring the ship. SPF on deck is a must.</p>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Outfit — Evening (Dinner on Ship)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Evening Ship Dining</div>
+          <p>This is a lovely night for one of your more formal looks. A flowy, elegant dinner dress in a rich color, statement jewelry, block-heel or kitten-heel sandals. A light wrap or blazer for the ship's cool interiors.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner on Ship</div>
+          <div class="dinner-details">Choose from Explora I's many dining venues. Smart elegant attire always suits ship dining. Use this evening to try a restaurant you haven't visited yet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 8: SAINT-TROPEZ -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">8</span>
+        <span class="day-name">Sun</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Sunday, May 10, 2026</div>
+        <h3>Saint-Tropez, France</h3>
+        <div class="day-type">In Port: 9:00 AM – 11:30 PM · Dinner in Town</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">🌤️</span> Warm & Mostly Sunny</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 69°F / Low 55°F</div>
+      <div class="weather-item"><span class="weather-icon">💨</span> Light breeze</div>
+      <div class="weather-item"><span class="weather-icon">🚴</span> Cycling Tour Day!</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 9:00 AM</span>
+          <span class="port-badge">Depart 11:30 PM</span>
+        </div>
+        <div class="info-content">Saint-Tropez! One of the world's most glamorous destinations. The old port (Vieux Port), the Place des Lices market, and the stunning Pampelonne beach area await. Your cycling tour runs 4 hours, exploring the town and its surroundings on two wheels. After the tour you have a long afternoon and evening before the late 11:30 PM departure — perfect for exploring the charming village, boutique shopping, or sitting at a harbor café. Dinner is in town.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Excursion</div>
+        <div class="info-content"><strong>"Cycling Through Saint-Tropez"</strong> — 4 hours. A bike tour exploring Saint-Tropez's scenic streets, coastal paths, and the surrounding countryside. Relatively flat but energetic.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Morning (Cycling Tour)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">4-Hour Bike Tour · Active & Sporty</div>
+          <p>Athletic leggings or bike shorts + a moisture-wicking, fitted top. A lightweight windproof jacket tied around your waist or packed in a small backpack (the morning can be cool, and you'll want it while coasting). Athletic sneakers or cycling shoes. A small backpack for sunscreen, water, snacks, and your phone. Hair back in a braid or ponytail under a helmet. SPF 50+ — you'll be in full sun.</p>
+        </div>
+      </div>
+      <div class="info-block">
+        <div class="info-label">Outfit — Afternoon & Evening (Saint-Tropez Village)</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Village Exploring + Dinner in Town</div>
+          <p>Change into something that captures Saint-Tropez's legendary chic: a flowy, floral or solid-color midi dress in white, blush, or sun-yellow + strappy flat sandals or espadrilles (cobblestones in the village). A structured rattan or leather bag. Gold jewelry. Light linen blazer for dinner as the evening cools to 55°F. Saint-Tropez rewards those who dress with flair — be inspired by the Riviera glamour but keep it wearable and walkable. This is the port where you can have the most fun with your outfit.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner (In Town — Casual-Chic)</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner in Saint-Tropez · Evening in Town</div>
+          <div class="dinner-details">Ship departs at 11:30 PM — you have a long, luxurious evening. Dine at one of Saint-Tropez's famous spots: La Tarte Tropézienne for pastries, or the harbor restaurants for fresh bouillabaisse and rosé. The town is stylish but not stuffy at dinner — your Riviera-chic ensemble is perfect. The floral midi dress with a blazer and espadrilles or flat sandals is ideal.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 9: MONACO -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">9</span>
+        <span class="day-name">Mon</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Monday, May 11, 2026</div>
+        <h3>Monaco / Monte Carlo</h3>
+        <div class="day-type">In Port: 9:00 AM – 9:00 PM · Dinner Ship or Town</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">☀️</span> Sunny & Beautiful</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 70°F / Low 57°F</div>
+      <div class="weather-item"><span class="weather-icon">💎</span> Dress to impress</div>
+      <div class="weather-item"><span class="weather-icon">🏎️</span> French Riviera Glamour</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 9:00 AM</span>
+          <span class="port-badge">Depart 9:00 PM</span>
+        </div>
+        <div class="info-content">The crown jewel of the Riviera. Your excursion takes you to <strong>Nice</strong> (the grand Promenade des Anglais, the Old Town/Vieux-Nice, and the famous flower market) and <strong>Èze</strong> (a breathtaking medieval village perched on a cliff with views of the Côte d'Azur). Back in Monaco, explore the Place du Casino, Prince's Palace, and the famous harbor of Monte Carlo. The ship departs at 9 PM — dinner is your choice of ship or town.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Excursion</div>
+        <div class="info-content"><strong>Nice and Èze</strong> — Day excursion. Nice Old Town is flat and walkable; Èze village involves a steep, cobblestone climb. Sturdy shoes are essential. After, return to Monaco for independent exploration of the Principality.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Nice + Èze Excursion · Monaco Chic</div>
+          <p>Monaco and the Riviera demand a step up in polish. Wear a sophisticated linen or cotton midi dress in a classic color — cream, navy, or soft sage — with a fitted blazer or tailored linen jacket. For shoes: leather walking sandals with a slight heel or wedge espadrilles (NOT flat flip-flops for Èze — the climb is steep and slippery). Structured leather or straw tote. Gold jewelry, chic sunglasses, and a silk scarf tied at the neck or on your bag. A hat with a brim. For the Casino area in the evening, keep the blazer on — there is an informal dress code (no shorts, flip-flops, or sportswear).</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner — Your Choice · Ship or Monaco Town</div>
+          <div class="dinner-details">Ship departs at 9 PM. If dining in Monaco: the town is famously expensive and glamorous — dress your absolute best. A chic cocktail dress, heels or elegant flats, statement jewelry. If dining on the ship: smart elegant as always. Either way, Monaco is the most glamorous port of the trip — dress for it.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 10: LIVORNO / FLORENCE -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">10</span>
+        <span class="day-name">Tue</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Tuesday, May 12, 2026</div>
+        <h3>Livorno / Florence, Italy</h3>
+        <div class="day-type">In Port: 8:00 AM – 8:00 PM · On Our Own</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">⛅</span> Mixed — Chance of Showers</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 68°F / Low 53°F</div>
+      <div class="weather-item"><span class="weather-icon">🌂</span> Bring umbrella!</div>
+      <div class="weather-item"><span class="weather-icon">🎨</span> Renaissance Art Day</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge">⚓ Arrive 8:00 AM</span>
+          <span class="port-badge">Depart 8:00 PM</span>
+        </div>
+        <div class="info-content">Livorno is the port for Florence — about a 1.5-hour drive or train ride away. You're exploring on your own today, which gives you complete flexibility. Florence is one of the most beautiful cities in the world: the Duomo, the Uffizi Gallery, Ponte Vecchio, the Boboli Gardens, and incredible food. Book the Uffizi and Accademia (Michelangelo's David) tickets in advance. Florence in May can have occasional showers — bring your compact umbrella. The ship departs at 8 PM so plan to leave Florence no later than 5:30 PM.</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Day</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Florence Exploration · Possible Rain</div>
+          <p>Smart-casual and practical: dark-wash slim jeans or tailored trousers (easier to navigate museums) + a beautiful blouse or fitted top. A lightweight packable rain jacket in a neutral color (navy, camel, or olive) is essential today — it's your best defense against Florence's May showers. White leather sneakers or very comfortable walking shoes with cushioned soles (Florence's Pietra Serena stone streets are unforgiving). Compact umbrella in your bag. A structured leather tote or backpack for your belongings. <strong>Note: Churches require covered shoulders — bring your light scarf or a cardigan.</strong></p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Dinner (In Town — Casual/Independent)</div>
+        <div class="dinner-box">
+          <div class="dinner-venue">Dinner on Our Own — Florence or Back on Ship</div>
+          <div class="dinner-details">If timing allows before departure, try a trattoria near the market area — Mercato Centrale or the Oltrarno neighborhood are excellent. Florentine bistecca (steak), ribollita, and fresh pasta are must-tries. Casual-chic attire — your day outfit is fine for a relaxed Florentine trattoria. If you return to the ship for dinner, dress elegant as usual for ship dining.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAY 11: ROME / CIVITAVECCHIA — DISEMBARK -->
+  <div class="day-card">
+    <div class="day-header">
+      <div class="day-number">
+        <span class="day-label">Day</span>
+        <span class="day-num">11</span>
+        <span class="day-name">Wed</span>
+      </div>
+      <div class="day-title-area">
+        <div class="date-text">Wednesday, May 13, 2026</div>
+        <h3>Rome (Civitavecchia) — Disembarkation</h3>
+        <div class="day-type">Disembark at 9:30 AM · Rome Awaits</div>
+      </div>
+    </div>
+    <div class="day-weather-strip">
+      <div class="weather-item"><span class="weather-icon">🌤️</span> Warm & Mostly Sunny</div>
+      <div class="weather-item"><span class="weather-icon">🌡️</span> High 72°F / Low 57°F</div>
+      <div class="weather-item"><span class="weather-icon">🏛️</span> Rome in Spring</div>
+      <div class="weather-item"><span class="weather-icon">☀️</span> 9 hrs sunshine</div>
+    </div>
+    <div class="day-body">
+      <div class="info-block">
+        <div class="port-info">
+          <span class="port-badge disembark">🚢 Disembark 9:30 AM</span>
+          <span class="port-badge">Civitavecchia Port</span>
+        </div>
+        <div class="info-content">The journey ends at Civitavecchia, Rome's port, approximately 1 hour from central Rome. Disembark at 9:30 AM. If you have time before your onward travel, Rome is spectacular in May — the Colosseum, Roman Forum, Trevi Fountain, Pantheon, and Vatican are all within the city. Your return flight is from FCO (Rome Fiumicino Airport). Per your booking, your return flight from Rome is on <strong>Saturday, May 16</strong>, so you have a few days to explore Rome!</div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Outfit — Disembarkation + Rome Exploration</div>
+        <div class="outfit-box">
+          <div class="outfit-occasion">Travel + Sightseeing Day</div>
+          <p>Comfort meets polish for disembarkation day. Smart casual trousers or dark jeans + a beautiful blouse or fitted top + white leather sneakers. A lightweight blazer for the transfer. A roomy tote or carry-on for your essentials. SPF 50+ and sunglasses for Rome sightseeing. <strong>For the Vatican (if visiting): covered shoulders and knees are strictly required</strong> — bring your scarf and ensure your trousers cover your knees, or wear a midi skirt/dress.</p>
+        </div>
+      </div>
+      <hr class="day-divider">
+      <div class="info-block">
+        <div class="info-label">Return Flight Note</div>
+        <div class="info-content">Your return flight is <strong>Saturday, May 16 from Rome (FCO) at 9:00 AM, arriving Lexington (LEX) at 5:12 PM</strong>. You have May 13, 14, 15 in Rome before your early morning flight. Enjoy La Dolce Vita — aperitivo at sunset, Roman pasta, and long evenings at Piazza Navona!</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div style="background: var(--navy); color: rgba(255,255,255,0.5); text-align: center; padding: 30px; font-size: 12px; letter-spacing: 1px;">
+  <div style="color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; margin-bottom: 8px;">Bon Voyage!</div>
+  2026 Mediterranean Cruise · Explora I · Barcelona to Civitavecchia (Rome)
+</div>
+
 </body>
 </html>
