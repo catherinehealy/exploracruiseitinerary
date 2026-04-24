@@ -1,21 +1,94 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>2026 Mediterranean Cruise Itinerary</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cruise Itinerary</title>
+    <style>
+        :root {
+            --navy: #001f3f;
+            --gold: #FFCC00;
+            --cream: #FFFFCC;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cream);
+            color: var(--navy);
+            margin: 0;
+        }
+        header {
+            background-color: var(--navy);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .hero {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+        }
+        .packing-essentials {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+        }
+        .essentials-item {
+            background: var(--gold);
+            border: 1px solid var(--navy);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-    <h1>2026 Mediterranean Cruise Itinerary</h1>
-    <p>Welcome to the 2026 Mediterranean Cruise. Below is your itinerary:</p>
-    <h2>Day 1: Barcelona, Spain</h2>
-    <p>Arrive in Barcelona and embark on the cruise.</p>
-    <h2>Day 2: Nice, France</h2>
-    <p>Explore the beautiful city of Nice.</p>
-    <h2>Day 3: Rome, Italy</h2>
-    <p>Visit the historic landmarks of Rome.</p>
-    <h2>Day 4: Santorini, Greece</h2>
-    <p>Enjoy the stunning views of Santorini.</p>
-    <h2>Day 5: Athens, Greece</h2>
-    <p>Discover the ancient ruins of Athens.</p>
-    <h2>Day 6: Return to Barcelona</h2>
-    <p>Conclude your cruise and disembark in Barcelona.</p>
+<header>
+    <h1>2026 Cruise Itinerary</h1>
+</header>
+<div class="hero">
+    <h2>Welcome Aboard!</h2>
+</div>
+<section class="packing-essentials">
+    <div class="essentials-item">Clothing</div>
+    <div class="essentials-item">Toiletries</div>
+    <div class="essentials-item">Documents</div>
+    <div class="essentials-item">Medications</div>
+    <div class="essentials-item">Electronics</div>
+    <div class="essentials-item">Snacks</div>
+    <div class="essentials-item">Books</div>
+    <div class="essentials-item">Swim Gear</div>
+</section>
+<section>
+    <h2>Day-by-Day Itinerary</h2>
+    <h3>Pre-Cruise Flights</h3>
+    <p>Flight information...</p>
+    <h3>Day 1: Departure</h3>
+    <p>Details about Day 1...</p>
+    <h3>Day 2: Destination One</h3>
+    <p>Details about Day 2...</p>
+    <h3>Day 3: Destination Two</h3>
+    <p>Details about Day 3...</p>
+    <h3>Day 4: Destination Three</h3>
+    <p>Details about Day 4...</p>
+    <h3>Day 5: Destination Four</h3>
+    <p>Details about Day 5...</p>
+    <h3>Day 6: Relaxation Day</h3>
+    <p>Details about Day 6...</p>
+    <h3>Day 7: Destination Five</h3>
+    <p>Details about Day 7...</p>
+    <h3>Day 8: Destination Six</h3>
+    <p>Details about Day 8...</p>
+    <h3>Day 9: Destination Seven</h3>
+    <p>Details about Day 9...</p>
+    <h3>Day 10: Destination Eight</h3>
+    <p>Details about Day 10...</p>
+    <h3>Day 11: Rome Disembarkation</h3>
+    <p>Return flight information...</p>
+</section>
 </body>
 </html>
